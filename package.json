@@ -1,0 +1,29 @@
+{
+  "name": "rollup-plugin-minify-html",
+  "version": "1.0.0",
+  "description": "Minify HTML using Rollup",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "keywords": [
+    "rollup-plugin"
+  ],
+  "author": "Amin NAIRI <https://github.com/aminnairi>",
+  "license": "MIT",
+  "dependencies": {
+    "html-minifier": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "rollup": "^1.11.1",
+    "rollup-plugin-delete": "^0.2.2",
+    "rollup-plugin-typescript3": "^1.1.2",
+    "typescript": "^3.4.5"
+  }
+}

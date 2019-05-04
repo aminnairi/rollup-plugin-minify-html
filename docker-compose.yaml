@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  node:
+    image: node
+    user: node
+    tty: true
+    stdin_open: true
+    working_dir: /home/node/app
+    volumes:
+        - .:/home/node/app
