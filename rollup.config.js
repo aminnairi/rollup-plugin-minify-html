@@ -1,5 +1,6 @@
 import { readFileSync } from 'fs';
 import { resolve } from 'path';
+import { eslint } from 'rollup-plugin-eslint';
 import typescript from 'rollup-plugin-typescript3';
 import remove from 'rollup-plugin-delete';
 
@@ -8,6 +9,7 @@ const dependencies = Object.keys(JSON.parse(readFileSync(resolve('package.json')
 export default [{
     input: resolve('index.ts'),
     plugins: [
+        eslint(),
         remove({
             targets: resolve('dist')
         }),
