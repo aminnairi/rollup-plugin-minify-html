@@ -9,12 +9,12 @@ export interface File {
     to: string;
 };
 
-export interface Options {
+export interface MinifyHtmlOptions {
     files: File[];
-    options?: MinifyOptions;
+    htmlMinifierOptions?: HtmlMinifierOptions;
 };
 
-export interface MinifyOptions {
+export interface HtmlMinifierOptions {
     caseSensitive?: boolean;
     collapseBooleanAttributes?: boolean;
     collapseInlineTagWhitespace?: boolean;
@@ -79,14 +79,14 @@ function fileWrite(path: string, data: string): Promise<void> {
     });
 }
 
-export function minifyHtml({ files, options }: Options): Plugin {
+export function minifyHtml({ files, htmlMinifierOptions }: MinifyHtmlOptions): Plugin {
     return {
         name: 'rollup-plugin-minify-html',
 
         async generateBundle(): Promise<void> {
             for (const { from, to } of files) {
                 const data: string = await fileOpen(from);
-                const minified: string = minify(data, options);
+                const minified: string = minify(data, htmlMinifierOptions);
 
                 await fileWrite(to, minified);
             }
