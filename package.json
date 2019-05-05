@@ -12,7 +12,14 @@
     "build": "rollup --config rollup.config.js"
   },
   "keywords": [
-    "rollup-plugin"
+    "rollup",
+    "rollup-plugin",
+    "rollup-plugin-minify",
+    "rollup-plugin-minify-html",
+    "typescript",
+    "html",
+    "html-minifier",
+    "node"
   ],
   "author": "Amin NAIRI <https://github.com/aminnairi>",
   "license": "MIT",
