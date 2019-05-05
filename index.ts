@@ -4,17 +4,17 @@ import { readFile, writeFile } from 'fs';
 // @ts-ignore
 import { minify } from 'html-minifier';
 
-interface Files {
+export interface File {
     from: string;
     to: string;
 };
 
-interface Options {
-    files: Files[];
-    options: MinifyOptions;
+export interface Options {
+    files: File[];
+    options?: MinifyOptions;
 };
 
-interface MinifyOptions {
+export interface MinifyOptions {
     caseSensitive?: boolean;
     collapseBooleanAttributes?: boolean;
     collapseInlineTagWhitespace?: boolean;
