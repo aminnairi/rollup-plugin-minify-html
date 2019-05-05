@@ -39,4 +39,9 @@ minifyHtml({
 })
 ```
 
+## Examples
+
+See the [`example`][example] folder.
+
 [html-minifier]: https://github.com/kangax/html-minifier
+[example]: ./example
