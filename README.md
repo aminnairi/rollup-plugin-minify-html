@@ -33,7 +33,7 @@ An object defining the options for the HTML minification. See [`html-minifier`][
 
 ```javascript
 minifyHtml({
-    options: {
+    htmlMinifierOptions: {
         collapseWhitespace: true
     }
 })

@@ -10,7 +10,7 @@ export default {
                     to: 'dist/index.html'
                 }
             ],
-            options: {
+            htmlMinifierOptions: {
                 removeAttributeQuotes: true
             }
         })
