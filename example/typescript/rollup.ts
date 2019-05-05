@@ -1,10 +1,8 @@
 'use strict';
 
-import { rollup, InputOptions, OutputOptions } from 'rollup';
 import { resolve } from 'path';
-import typescript from 'rollup-plugin-typescript3';
-import { minifyHtml, File, MinifyOptions } from 'rollup-plugin-minify-html';
-import { RollupBuild } from 'rollup';
+import { rollup, InputOptions, RollupBuild, OutputOptions } from 'rollup';
+import { minifyHtml, MinifyHtmlOptions, File, HtmlMinifierOptions } from 'rollup-plugin-minify-html';
 
 async function build() {
     const files: File[] = [{
@@ -12,22 +10,22 @@ async function build() {
         to: resolve('dist', 'index.html')
     }];
 
-    const options: MinifyOptions = {
+    const htmlMinifierOptions: HtmlMinifierOptions = {
         collapseWhitespace: true
     };
 
+    const minifyHtmlOptions: MinifyHtmlOptions = { files, htmlMinifierOptions };
+
     const inputOptions: InputOptions = {
         input: resolve('src', 'index.ts'),
-
         plugins: [
-            minifyHtml({ files, options }),
-            typescript()
+            minifyHtml(minifyHtmlOptions)
         ]
-
     };
 
     const outputOptions: OutputOptions = {
-        file: resolve('dist', 'index.js')
+        file: resolve('dist', 'index.js'),
+        format: 'iife'
     };
 
     const bundle: RollupBuild = await rollup(inputOptions);

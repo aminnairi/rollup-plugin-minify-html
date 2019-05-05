@@ -1,7 +1,10 @@
 {
   "private": true,
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
   "dependencies": {
     "rollup": "^1.11.2",
-    "rollup-plugin-minify-html": "file:.."
+    "rollup-plugin-minify-html": "file:../.."
   }
 }
