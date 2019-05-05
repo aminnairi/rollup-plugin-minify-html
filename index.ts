@@ -4,13 +4,13 @@ import { readFile, writeFile } from 'fs';
 // @ts-ignore
 import { minify } from 'html-minifier';
 
-export interface File {
+export interface MinifyHtmlFile {
     from: string;
     to: string;
 };
 
 export interface MinifyHtmlOptions {
-    files: File[];
+    files: MinifyHtmlFile[];
     htmlMinifierOptions?: HtmlMinifierOptions;
 };
 

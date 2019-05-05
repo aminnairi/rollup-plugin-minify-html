@@ -2,10 +2,10 @@
 
 import { resolve } from 'path';
 import { rollup, InputOptions, RollupBuild, OutputOptions } from 'rollup';
-import { minifyHtml, MinifyHtmlOptions, File, HtmlMinifierOptions } from 'rollup-plugin-minify-html';
+import { minifyHtml, MinifyHtmlOptions, MinifyHtmlFile, HtmlMinifierOptions } from 'rollup-plugin-minify-html';
 
 async function build() {
-    const files: File[] = [{
+    const files: MinifyHtmlFile[] = [{
         from: resolve('src', 'index.html'),
         to: resolve('dist', 'index.html')
     }];
